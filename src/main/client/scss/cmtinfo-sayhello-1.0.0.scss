@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/buttons";
+
+a, button, input[type="submit"] {
+  &[data-sayhello] {
+    @extend .btn;
+    @include button-variant(map_get($theme-colors, "primary"), map_get($theme-colors, "primary"))
+  }
+}

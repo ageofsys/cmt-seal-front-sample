@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="layout (title, content, links, scripts)"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!--레이아웃 기본 제목-->
+    <title th:replace="${title}">Seal Structure Prototype</title>
+
+    <!--외부 의존 스타일-->
+<!--    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">-->
+<!--    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">-->
+
+    <!--유틸성 스타일-->
+
+    <!--컴포넌트 스타일-->
+
+    <!--레이아웃 스타일-->
+
+    <!--테마 스타일-->
+
+    <!--페이지 스타일-->
+    <th:block th:replace="${links}"/>
+</head>
+<body class="layout-narrow">
+
+<div th:insert="fragments/navbar :: basic" class="mb-3"></div>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <div th:replace="${content}">
+                <p>Layout content</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:insert="fragments/footer :: basic"></div>
+
+<!--외부 의존 스크립트-->
+<!--<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>-->
+<script type="text/javascript" th:src="@{/js/bundle.js}"></script>
+
+<!--유틸성 스크립트-->
+
+<!--컴포넌트 스크립트-->
+
+<!--레이아웃 스크립트-->
+
+<!--테마 스크립트-->
+
+<!--페이지 스크립트-->
+<th:block th:replace="${scripts}"/>
+
+</body>
+</html>
